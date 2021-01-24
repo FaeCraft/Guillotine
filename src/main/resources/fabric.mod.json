@@ -1,37 +1,32 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "hed",
   "version": "${version}",
-
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Hed",
+  "description": "Hed",
   "authors": [
-    "Me!"
+    "gdude2002",
+    "sakiraart"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://discord.gg/hqpmDas",
+    "sources": "https://github.com/FaeCraft/Hed"
   },
-
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
-
+  "license": "LGPL-3.0",
+  "icon": "assets/hed/logo.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleModKt::init"
+      "io.github.faecraft.hed.ModMainKt::init"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "hed.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.8.7",
+    "fabricloader": ">=0.7.4",
     "fabric": "*",
     "fabric-language-kotlin": "*",
     "minecraft": "1.16.x"
-  },
-  "suggests": {
-    "flamingo": "*"
   }
 }

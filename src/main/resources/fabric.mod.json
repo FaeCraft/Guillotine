@@ -1,27 +1,27 @@
 {
   "schemaVersion": 1,
-  "id": "hed",
+  "id": "guillotine",
   "version": "${version}",
-  "name": "Hed",
-  "description": "Hed",
+  "name": "Guillotine",
+  "description": "Guillotine",
   "authors": [
     "gdude2002",
     "sakiraart"
   ],
   "contact": {
     "homepage": "https://discord.gg/hqpmDas",
-    "sources": "https://github.com/FaeCraft/Hed"
+    "sources": "https://github.com/FaeCraft/Guillotine"
   },
   "license": "LGPL-3.0",
-  "icon": "assets/hed/logo.png",
+  "icon": "assets/guillotine/logo.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "io.github.faecraft.hed.ModMainKt::init"
+      "io.github.faecraft.guillotine.ModMainKt::init"
     ]
   },
   "mixins": [
-    "hed.mixins.json"
+    "guillotine.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.7.4",

@@ -1,8 +1,8 @@
-package io.github.faecraft.hed
+package io.github.faecraft.guillotine
 
-import net.minecraft.entity.EntityType
+import io.github.faecraft.guillotine.register.Enchantments
+import net.minecraft.entity.LivingEntity
 import net.minecraft.entity.damage.DamageSource
-import net.minecraft.entity.mob.CreeperEntity
 import net.minecraft.item.ItemStack
 import net.minecraft.item.Items
 import net.minecraft.server.network.ServerPlayerEntity
@@ -21,18 +21,23 @@ object MixinHandler {
     }
 
     fun onDeath(player: ServerPlayerEntity, source: DamageSource, ci: CallbackInfo) {
-        val entity = source.source ?: return
+        val attacker = source.attacker ?: return
 
-        if (entity.type == EntityType.CREEPER) {
-            val creeper = entity as CreeperEntity
+        val item = when (attacker) {
+            is ServerPlayerEntity -> attacker.mainHandStack
+            is LivingEntity -> attacker.activeItem
 
-            if (creeper.shouldRenderOverlay() && source.isExplosive) {
+            else -> null
+        } ?: return
+
+        val level = item.enchantmentLevel(Enchantments.GUILLOTINE) ?: return
+
+        when (level) {
+            0, 1 -> if (player.world.random.nextInt(2) == 1) {
                 player.dropStack(createHead(player))
             }
-        } else if (entity.type == EntityType.SPECTRAL_ARROW) {
-            if (player.world.random.nextInt(4) == 0) {
-                player.dropStack(createHead(player))
-            }
+
+            else -> player.dropStack(createHead(player))
         }
     }
 }

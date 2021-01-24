@@ -1,6 +1,6 @@
-package io.github.faecraft.hed.mixin;
+package io.github.faecraft.guillotine.guillotine;
 
-import io.github.faecraft.hed.MixinHandler;
+import io.github.faecraft.guillotine.MixinHandler;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;

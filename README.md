@@ -1,6 +1,4 @@
-# Hed
-![Gradle build](https://github.com/FaeCraft/Hed/workflows/Gradle%20build/badge.svg)
+# Guillotine
+![Gradle build](https://github.com/FaeCraft/Guillotine/workflows/Gradle%20build/badge.svg)
 
-Hed is a mod that allows player heads to be obtained.
-
-How? TBD!
+This is a custom mod designed with a specific server in mind.
